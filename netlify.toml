@@ -1,0 +1,4 @@
+[build]
+  base = "pagian dragon"
+  command = "pnpm run build"
+  publish = "pagian dragon/.next"
