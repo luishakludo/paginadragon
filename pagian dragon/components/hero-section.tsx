@@ -38,13 +38,23 @@ export function HeroSection() {
 
           <FadeIn delay={300}>
             <div className="flex flex-wrap items-center justify-center gap-4 lg:justify-start">
-              <button className="rounded-xl border border-[#e6edf3]/[0.08] bg-[#0d1117]/40 px-7 py-3.5 text-base font-bold text-[#e6edf3] backdrop-blur-xl transition hover:border-[#00FF9C]/30 hover:bg-[#0d1117]/60">
-                {"Ver demonstra\u00e7\u00e3o"}
-              </button>
-              <button className="flex items-center gap-2.5 rounded-xl bg-gradient-to-r from-[#00FF9C] to-[#00DD88] px-7 py-3.5 text-base font-bold text-[#0B0F14] transition hover:brightness-110">
+              <a
+                href="https://dragonteste.onrender.com/cadastro"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="rounded-xl border border-[#e6edf3]/[0.08] bg-[#0d1117]/40 px-7 py-3.5 text-base font-bold text-[#e6edf3] backdrop-blur-xl transition hover:border-[#00FF9C]/30 hover:bg-[#0d1117]/60"
+              >
+                {"Ver demonstração"}
+              </a>
+              <a
+                href="https://dragonteste.onrender.com/cadastro"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2.5 rounded-xl bg-gradient-to-r from-[#00FF9C] to-[#00DD88] px-7 py-3.5 text-base font-bold text-[#0B0F14] transition hover:brightness-110"
+              >
                 {"Criar meu bot agora"}
                 <ArrowRight className="h-4 w-4" />
-              </button>
+              </a>
             </div>
           </FadeIn>
 
