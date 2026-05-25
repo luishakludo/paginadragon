@@ -1,0 +1,235 @@
+@import 'tailwindcss';
+@import 'tw-animate-css';
+
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  --background: #0B0F14;
+  --foreground: #E6EDF3;
+  --card: #121821;
+  --card-foreground: #E6EDF3;
+  --popover: #121821;
+  --popover-foreground: #E6EDF3;
+  --primary: #00FF9C;
+  --primary-foreground: #0B0F14;
+  --secondary: #121821;
+  --secondary-foreground: #E6EDF3;
+  --muted: #121821;
+  --muted-foreground: #8A93A6;
+  --accent: #00FF9C;
+  --accent-foreground: #0B0F14;
+  --destructive: oklch(0.577 0.245 27.325);
+  --destructive-foreground: oklch(0.577 0.245 27.325);
+  --border: rgba(138, 147, 166, 0.1);
+  --input: rgba(138, 147, 166, 0.2);
+  --ring: #00FF9C;
+  --chart-1: #00FF9C;
+  --chart-2: #8A93A6;
+  --chart-3: #E6EDF3;
+  --chart-4: #121821;
+  --chart-5: #0B0F14;
+  --radius: 0.75rem;
+  --color-neon: #00FF9C;
+  --color-carvao: #0B0F14;
+  --color-grafite: #121821;
+  --color-aco: #8A93A6;
+  --color-gelo: #E6EDF3;
+}
+
+@theme inline {
+  --font-sans: 'Inter', 'Inter Fallback', sans-serif;
+  --font-mono: 'Geist Mono', 'Geist Mono Fallback';
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-neon: var(--color-neon);
+  --color-carvao: var(--color-carvao);
+  --color-grafite: var(--color-grafite);
+  --color-aco: var(--color-aco);
+  --color-gelo: var(--color-gelo);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/* Glass card style */
+.glass-card {
+  background: #0d1117;
+  border: 1px solid rgba(0, 255, 156, 0.08);
+}
+
+/* Neon glow shadow */
+.neon-shadow {
+  box-shadow: 0 0 24px rgba(0, 255, 156, 0.25), 0 0 60px rgba(0, 255, 156, 0.08);
+}
+
+/* Neon border on hover */
+.neon-border-hover {
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+.neon-border-hover:hover {
+  border-color: #00FF9C;
+  box-shadow: 0 0 15px rgba(0, 255, 156, 0.1);
+}
+
+/* Hero glow background */
+.hero-glow {
+  position: absolute;
+  top: -10%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60%;
+  height: 600px;
+  background: radial-gradient(ellipse, rgba(0, 255, 156, 0.12) 0%, rgba(11, 15, 20, 0) 70%);
+  z-index: 0;
+  pointer-events: none;
+}
+
+/* Marquee scroll animation */
+@keyframes marquee-scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+.marquee-track {
+  animation: marquee-scroll 25s linear infinite;
+}
+
+/* Gradient text - Dragon green */
+.gradient-text {
+  color: #00FF9C;
+}
+
+/* Dot pattern background for feature cards */
+.dot-pattern {
+  background-image: radial-gradient(rgba(0, 255, 156, 0.15) 1px, transparent 1px);
+  background-size: 16px 16px;
+}
+
+/* Card with green top glow */
+.card-glow-top {
+  position: relative;
+}
+.card-glow-top::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, #00FF9C, transparent);
+}
+
+/* Card with bottom glow line */
+.glow-line-bottom {
+  position: relative;
+}
+.glow-line-bottom::after {
+  content: '';
+  position: absolute;
+  bottom: -1px;
+  left: 20%;
+  width: 60%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, rgba(0, 255, 156, 0.6), transparent);
+  filter: blur(2px);
+}
+
+/* Carousel card glow */
+.carousel-card-glow {
+  box-shadow: 0 0 40px rgba(0, 255, 156, 0.1), inset 0 1px 0 rgba(0, 255, 156, 0.15);
+}
+
+/* Icon circle with glow */
+.icon-glow {
+  box-shadow: 0 0 16px rgba(0, 255, 156, 0.2), 0 0 32px rgba(0, 255, 156, 0.06);
+}
+
+/* Green glow button */
+.btn-glow-green {
+  animation: pulse-glow 2.5s ease-in-out infinite;
+}
+
+@keyframes pulse-glow {
+  0%, 100% {
+    box-shadow: 0 0 20px rgba(0, 255, 156, 0.4), 0 0 50px rgba(0, 255, 156, 0.2);
+  }
+  50% {
+    box-shadow: 0 0 32px rgba(0, 255, 156, 0.6), 0 0 70px rgba(0, 255, 156, 0.3), 0 0 110px rgba(0, 255, 156, 0.1);
+  }
+}
+
+/* Shimmer sweep inside button */
+.btn-shimmer {
+  background: linear-gradient(
+    105deg,
+    transparent 30%,
+    rgba(255, 255, 255, 0.25) 45%,
+    rgba(255, 255, 255, 0.45) 50%,
+    rgba(255, 255, 255, 0.25) 55%,
+    transparent 70%
+  );
+  background-size: 250% 100%;
+  animation: shimmer-sweep 3s ease-in-out infinite;
+}
+
+@keyframes shimmer-sweep {
+  0% {
+    background-position: 200% center;
+  }
+  100% {
+    background-position: -200% center;
+  }
+}
+
+.notification-card {
+  animation: fadeSlideIn 0.6s ease-out both;
+}
+
+/* Fade + slide in animation for notification cards */
+@keyframes fadeSlideIn {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
